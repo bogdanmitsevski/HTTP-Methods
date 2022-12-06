@@ -1,0 +1,16 @@
+datasource db {
+    provider = "postgres"
+    url = "postgresql://postgres:367912@localhost:5432/server_requests"
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Test {
+    id    Int @default(autoincrement())
+    name  String @unique
+    price Int
+    startedAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+}
